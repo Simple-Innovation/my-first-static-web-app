@@ -5,9 +5,12 @@ function App() {
 
   useEffect(() => {
     (async function () {
-      const response = await fetch(`/api/message`)
-      const { text } = response.ok ? await response.json() : await response.text();
-      setData(text);
+      try {
+        const text = await (await fetch(`/api/message`)).text();
+        setData(text);
+      } catch (error) {
+        setData(error.message);
+      }
     })();
   });
 
