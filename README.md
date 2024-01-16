@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 npm install react-scripts@latest # Needed to avoid the "Error: error:0308010C:digital envelope routines::unsupported" error
 npm install -D @azure/static-web-apps-cli
 npm install
-nvm use 18
+nvm use 18 # Needed to avoid the error "Found Azure Functions Core Tools v4 which is incompatible with your current Node.js v20.10.0."
 npm run build
 ```
 
