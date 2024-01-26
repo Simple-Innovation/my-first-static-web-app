@@ -5,7 +5,7 @@ export async function message(request: HttpRequest, context: InvocationContext):
 
     const name = request.query.get('name') || await request.text() || 'world';
 
-    return { body: `Hello, ${name}!` };
+    return { body: `Hello, ${name}, from API!!` };
 };
 
 app.http('message', {

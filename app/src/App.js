@@ -6,15 +6,18 @@ function App() {
   useEffect(() => {
     (async function () {
       try {
-        const text = await (await fetch(`/api/message`)).text();
-        setData(text);
+        const response = await fetch(`/api/message`)
+        if (!response.ok) {
+          throw new Error(`/api/message ${response.status} ${response.statusText}`)
+        }
+        setData(await response.text());
       } catch (error) {
         setData(error.message);
       }
     })();
   });
 
-  return <div>{data}</div>;
+  return <div>[{data}]</div>;
 }
 
 export default App;
