@@ -8,17 +8,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ```sh
 npm install react-scripts@latest # Needed to avoid the "Error: error:0308010C:digital envelope routines::unsupported" error
-npm install -g @azure/static-web-apps-cli
-npm install
-nvm use 18 # Needed to avoid the error "Found Azure Functions Core Tools v4 which is incompatible with your current Node.js v20.10.0."
+npm install -g @azure/static-web-apps-cli@latest
 npm run build
 ```
 
 - Stop codespace
 - Start codespace
 
+- Install Azure Functions for Debian https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=linux%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-typescript#install-the-azure-functions-core-tools
+
 ```sh
-swa init
-swa build
-swa start
+nvm use 18 # Needed to avoid the error "Found Azure Functions Core Tools v4 which is incompatible with your current Node.js v20.10.0."
+swa start app/build --api-location api
 ```
